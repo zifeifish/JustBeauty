@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<block wx:else>
+			<!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+			<text class="userinfo-nickname">Hello {{userInfo.nickName}}</text>
+		</block>
+	</view>
+
+	<view class="box">
+		<image class="img" mode="aspectFit" wx:if="{{imgSrc.length>0}}" src="{{imgSrc}}"></image>
+	</view>
+
+	<view bindtap="chooseImg" class="btn">我要测试</view>
+</view>
